@@ -221,11 +221,11 @@ class VCard
      *
      * @param string $property LOGO|PHOTO
      * @param string $url image url or filename
-     * @param bool $include Do we include the image in our vcard or not?
      * @param string $element The name of the element to set
+     * @param bool $include Do we include the image in our vcard or not?
      * @throws VCardException
      */
-    private function addMedia($property, $url, $include = true, $element)
+    private function addMedia($property, $url, $element, $include = true)
     {
         $mimeType = null;
 
@@ -434,8 +434,8 @@ class VCard
         $this->addMedia(
             'LOGO',
             $url,
-            $include,
-            'logo'
+	        'logo',
+            $include
         );
 
         return $this;
@@ -470,8 +470,8 @@ class VCard
         $this->addMedia(
             'PHOTO',
             $url,
-            $include,
-            'photo'
+	        'photo',
+            $include
         );
 
         return $this;
